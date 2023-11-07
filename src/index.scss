@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+
+$mainColor : #0aad0a;
+$lightColor : #f0f3f2;
+$rateColor:#ffc908;
+
+
+
+body {
+  font-family: "Encode Sans Expanded", sans-serif
+}
+
+@mixin borderRadius($x) {
+  border-radius: $x;
+  -webkit-border-radius: $x;
+  -moz-border-radius: $x;
+  -ms-border-radius: $x;
+  -o-border-radius: $x;
+}
+
+
+.curusor_pointer{
+  cursor: pointer;
+}
+

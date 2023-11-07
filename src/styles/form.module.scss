@@ -1,0 +1,13 @@
+@import '../index.scss';
+
+
+
+.form{
+    .form__Btn{
+        background-color: $mainColor;
+        border: 1px solid $mainColor !important; 
+        &:hover{
+            background-color: $mainColor !important;
+        }
+    }
+}

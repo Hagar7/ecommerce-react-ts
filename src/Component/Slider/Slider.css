@@ -1,0 +1,98 @@
+.swiper .swiper-slide .bgimg{
+    width: 100% !important;
+    min-height: 60vh !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+  }
+  .swiper .swiper-slide .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    top:0;
+    left: 0;
+    display: flex;
+    align-items: center;
+
+  
+  }
+  .swiper .swiper-slide .overlay h4{
+   margin-left: 20px;
+   transform: translate(80px, 0px);
+   -webkit-transform: translate(80px, 0px);
+   -moz-transform: translate(80px, 0px);
+   -ms-transform: translate(80px, 0px);
+   -o-transform: translate(80px, 0px);
+}
+.swiper-pagination-bullet {
+    background:rgb(10, 173, 10,0.3) !important;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    transform: translate(30px, -200px);
+    -webkit-transform: translate(30px, -200px);
+    -moz-transform: translate(30px, -200px);
+    -ms-transform: translate(30px, -200px);
+    -o-transform: translate(30px, -200px);
+    z-index: 99;
+    cursor: pointer;
+}
+.swiper-pagination-bullet-active{
+  background:rgb(10, 173, 10) !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+ .swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: flex;
+  flex-direction: column;
+}
+ .swiper-pagination-clickable .swiper-pagination-bullet {
+  margin-bottom: 7px !important;
+ 
+}
+
+
+
+
+@media screen and (max-width: 1180px) {
+  .swiper-pagination-bullet {
+    transform: translate(30px, -350px);
+    -webkit-transform: translate(30px, -350px);
+    -moz-transform: translate(30px, -350px);
+    -ms-transform: translate(30px, -350px);
+    -o-transform: translate(30px, -350px);
+}
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .swiper-pagination-bullet {
+    transform: translate(30px, -210px);
+    -webkit-transform: translate(30px, -210px);
+    -moz-transform: translate(30px, -210px);
+    -ms-transform: translate(30px, -210px);
+    -o-transform: translate(30px, -210px);
+}
+}
+
+
+@media screen and (max-width: 767px) {
+  .swiper .swiper-slide .overlay h4{
+    margin-left: 20px;
+    transform: translate(20px, -50px);
+    -webkit-transform: translate(20px, -50px);
+    -moz-transform: translate(20px, -50px);
+    -ms-transform: translate(20px, -50px);
+    -o-transform: translate(20px, -50px);
+}
+.swiper-pagination-bullet {
+  transform: translate(30px, -230px);
+  -webkit-transform: translate(30px, -230px);
+  -moz-transform: translate(30px, -230px);
+  -ms-transform: translate(30px, -230px);
+  -o-transform: translate(30px, -230px);
+}
+}
