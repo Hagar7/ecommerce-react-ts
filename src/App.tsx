@@ -5,7 +5,11 @@ import Products from "./Pages/Products";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
-import ProtectedRoute from "./Component/ProtectedRoute/ProtectedRoute";
+import ProtectedRoute, {
+  ProtectedLoginRoute,
+} from "./Component/ProtectedRoute/ProtectedRoute";
+import CategoryDetail from "./Pages/CategoryDetail";
+
 
 function App() {
   const routes = createBrowserRouter([
@@ -37,8 +41,30 @@ function App() {
             </ProtectedRoute>
           ),
         },
-        { path: "/login", element: <Login /> },
-        { path: "register", element: <Register /> },
+        {
+          path:'category/:_id',
+          element: (
+            <ProtectedRoute>
+              <CategoryDetail />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/login",
+          element: (
+            <ProtectedLoginRoute>
+              <Login />
+            </ProtectedLoginRoute>
+          ),
+        },
+        {
+          path: "register",
+          element: (
+            <ProtectedLoginRoute>
+              <Register />
+            </ProtectedLoginRoute>
+          ),
+        },
       ],
     },
   ]);

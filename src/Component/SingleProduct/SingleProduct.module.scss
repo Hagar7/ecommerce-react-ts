@@ -1,0 +1,45 @@
+@import "../../index.scss";
+
+.product_box {
+  @include borderRadius(10x);
+
+  padding: 10px;
+
+  img {
+    height: 250px;
+  }
+  h2 {
+    color: $mainColor;
+    margin-top: 15px;
+  }
+  .product_price {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      i {
+        font-size: 12px;
+        color: $rateColor;
+        margin-right: 5px;
+      }
+    }
+  }
+  .product_btn {
+    background-color: $mainColor;
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+    &:hover{
+        background-color: $mainColor;
+    }
+  }
+  &:hover .product_btn {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  &:hover{
+    --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  }
+}

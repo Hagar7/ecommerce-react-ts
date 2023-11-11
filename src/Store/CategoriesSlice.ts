@@ -80,6 +80,8 @@ const categorySlice = createSlice({
       state.loading = false;
       state.error = "";
       state.category = action.payload.data;
+    
+      
     });
     builder.addCase(getCategoryById.rejected, (state,action) => {
       state.loading = false;

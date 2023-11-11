@@ -5,10 +5,12 @@ import { getCategories } from '../Store/CategoriesSlice'
 import { getSubCategoriesByCategory, getSubCategory, getSubCategoryById } from '../Store/SubCategorySlice'
 import Slider from '../Component/Slider/Slider'
 import CategorySlider from '../Component/CategorySlider/CategorySlider'
+import ProductsContainer from '../Component/ProductsContainer/ProductsContainer'
 
 const Home:React.FC = () => {
 const dispatch = useAppDispatch()
   const {categories} = useAppSelector((state)=>state.category)
+  const {products} = useAppSelector((state)=>state.product)
 
 
 useEffect(() => {
@@ -23,7 +25,8 @@ dispatch(getSubCategoriesByCategory('6439d5b90049ad0b52b90048'))
   return (
     <>
   <Slider/>
-  {/* <CategorySlider categories={categories}/> */}
+  <CategorySlider categories={categories}/>
+  <ProductsContainer products={products}/>
     </>
   )
 }
