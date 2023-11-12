@@ -7,8 +7,6 @@ interface ProductProps {
 }
 
 const ProductsContainer: React.FC<ProductProps> = ({ products }) => {
-  console.log(products);
-
   return (
     <div className="container">
       <div className="row my-5 gx-3">
@@ -22,6 +20,7 @@ const ProductsContainer: React.FC<ProductProps> = ({ products }) => {
               imageCover={product.imageCover}
               category={product.category}
               ratingsAverage={product.ratingsAverage}
+              _id={product._id}
             />
           </div>
         ))}

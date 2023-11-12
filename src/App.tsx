@@ -9,6 +9,7 @@ import ProtectedRoute, {
   ProtectedLoginRoute,
 } from "./Component/ProtectedRoute/ProtectedRoute";
 import CategoryDetail from "./Pages/CategoryDetail";
+import ProductDetail from "./Pages/ProductDetail";
 
 
 function App() {
@@ -46,6 +47,14 @@ function App() {
           element: (
             <ProtectedRoute>
               <CategoryDetail />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path:'product/:_id',
+          element: (
+            <ProtectedRoute>
+              <ProductDetail />
             </ProtectedRoute>
           ),
         },

@@ -1,0 +1,27 @@
+@import '../../index.scss';
+
+
+.Product_info{
+    .Product_price{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span{
+            background-color: $mainColor;
+            color: $lightColor;
+            @include borderRadius(5px)
+        }
+    }
+    span{
+        i{
+            color: $rateColor;
+        }
+    }
+    .product_btn{
+        background-color: $mainColor;
+        &:hover{
+            background-color: $mainColor;
+        }
+    }
+}

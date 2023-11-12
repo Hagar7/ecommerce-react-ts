@@ -37,7 +37,7 @@ export const getProducts = createAsyncThunk(
 
 export const getProductById = createAsyncThunk(
   "getById/products",
-  async (_id: string, thunkAPI) => {
+  async (_id: string | undefined, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
 
     try {

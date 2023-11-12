@@ -24,6 +24,7 @@ dispatch(getSubCategoriesByCategory('6439d5b90049ad0b52b90048'))
 
   return (
     <>
+
   <Slider/>
   <CategorySlider categories={categories}/>
   <ProductsContainer products={products}/>
