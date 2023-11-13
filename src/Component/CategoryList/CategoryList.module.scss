@@ -1,0 +1,14 @@
+
+
+@import '../../index.scss';
+
+
+
+.list{
+    // background-color: rgb(10, 173, 10,0.4);
+    padding: 15px;
+    @include borderRadius(10px);
+    .formCheck{
+        font-size: 14px;
+    }
+}

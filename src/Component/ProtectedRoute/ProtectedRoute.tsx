@@ -16,14 +16,14 @@ const ProtectedRoute: FC<protectedRouteProps> = ({ children }) => {
   }
 };
 
-export const ProtectedLoginRoute: FC<protectedRouteProps> = ({ children }) => {
-  const { authUser } = useAppSelector((state) => state.auth);
+// export const ProtectedLoginRoute: FC<protectedRouteProps> = ({ children }) => {
+//   const { authUser } = useAppSelector((state) => state.auth);
 
-  if (authUser == null && localStorage.getItem("token") == null) {
-    return children;
-  } else {
-    return <Navigate to="/" />;
-  }
-};
+//   if (authUser == null && localStorage.getItem("token") == null) {
+//     return children;
+//   } else {
+//     return <Navigate to="/" />;
+//   }
+// };
 
 export default ProtectedRoute;

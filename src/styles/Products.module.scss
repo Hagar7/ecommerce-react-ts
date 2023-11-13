@@ -1,0 +1,17 @@
+@import '../index.scss';
+
+
+
+.mainContainer{
+    min-height: 100vh;
+    margin-top: 50px;
+    h3{
+        color: $mainColor;
+        text-align: center;
+    }
+    .filtered{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

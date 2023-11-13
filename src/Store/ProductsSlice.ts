@@ -11,6 +11,7 @@ interface ProductState {
   error: string | undefined;
   products: Product[];
   product: Product | null;
+  productsFiltered: Product[];
 }
 
 const initialState: ProductState = {
@@ -18,6 +19,7 @@ const initialState: ProductState = {
   error: "",
   products: [],
   product: null,
+  productsFiltered: [],
 };
 
 export const getProducts = createAsyncThunk(
@@ -54,7 +56,18 @@ export const getProductById = createAsyncThunk(
 const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    categoryFiltered: (state, action) => {
+      state.productsFiltered = state.products.filter(
+        (item) => item.category.name === action.payload
+      );
+    },
+    brandFiltered: (state, action) => {
+      state.productsFiltered = state.products.filter(
+        (item) => item.brand.name === action.payload
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProducts.pending, (state) => {
       state.loading = true;
@@ -86,3 +99,4 @@ const productSlice = createSlice({
 });
 
 export default productSlice.reducer;
+export const { categoryFiltered, brandFiltered } = productSlice.actions;

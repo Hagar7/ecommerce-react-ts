@@ -6,7 +6,6 @@ import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import ProtectedRoute, {
-  ProtectedLoginRoute,
 } from "./Component/ProtectedRoute/ProtectedRoute";
 import CategoryDetail from "./Pages/CategoryDetail";
 import ProductDetail from "./Pages/ProductDetail";
@@ -61,17 +60,17 @@ function App() {
         {
           path: "/login",
           element: (
-            <ProtectedLoginRoute>
+            // <ProtectedLoginRoute>
               <Login />
-            </ProtectedLoginRoute>
+            // </ProtectedLoginRoute>
           ),
         },
         {
           path: "register",
           element: (
-            <ProtectedLoginRoute>
+            // <ProtectedLoginRoute>
               <Register />
-            </ProtectedLoginRoute>
+            // </ProtectedLoginRoute>
           ),
         },
       ],

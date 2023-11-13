@@ -5,6 +5,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 import product from './ProductsSlice'
 import category from './CategoriesSlice'
 import subCategory from './SubCategorySlice'
+import brand from './BrandSlice'
 
 
 const persistConfig = {
@@ -17,7 +18,8 @@ const persistConfig = {
   auth,
   product,
   category,
-  subCategory
+  subCategory,
+  brand
   })
 
   const persistedReducer = persistReducer(persistConfig, rootReducer)
