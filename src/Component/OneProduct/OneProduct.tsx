@@ -6,7 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import './style.css';
+import "./style.css";
+import { useAppDispatch } from "../../Store/hooks";
+import { addProductToCart } from "../../Store/CartSLice";
 interface ProductProps {
   title: string | undefined;
   description: string | undefined;
@@ -26,60 +28,50 @@ const OneProduct: React.FC<ProductProps> = ({
   category,
   ratingsAverage,
   images,
+  _id,
 }) => {
+  const dispatch = useAppDispatch();
   return (
     <div className="row py-5">
       <div className="col-md-5">
         <div className={`${style.Product_img}`}>
-            {/* <img src={imageCover} alt={title} className="w-75"/> */}
-            <div className="Product_gallery">
+          <div className="Product_gallery">
             <Swiper
-            modules={[Pagination, Navigation]}
-            pagination={{ clickable: true }}
-            slidesPerView={1}
-            navigation
-          >
-            {images?.map((item,index) => (
-              <SwiperSlide key={index}>
+              modules={[Pagination, Navigation]}
+              pagination={{ clickable: true }}
+              slidesPerView={1}
+              navigation
+            >
+              {images?.map((item, index) => (
+                <SwiperSlide key={index}>
                   <div
                     className="product_img "
                     style={{ backgroundImage: `url(${item})` }}
                   ></div>
-                  {/* <img src={item} alt={title} className="w-75"/> */}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
       <div className="col-md-7 my-5 py-5">
         <div className={`${style.Product_info}`}>
-            <div className={`${style.Product_price}`}>
+          <div className={`${style.Product_price}`}>
             <h5 className="font-sm main_clr">{category?.name}</h5>
             <span className="btn">{price} EGP</span>
-            </div>
+          </div>
           <h3>{title}</h3>
           <p>{description}</p>
           <span>
-          <i className="fa fa-star"></i>
-          {ratingsAverage}
-        </span>
-        <button className={`${style.product_btn} btn text-white w-100 my-5`}>
-        + Add
-      </button>
+            <i className="fa fa-star"></i>
+            {ratingsAverage}
+          </span>
+          <button
+            className={`${style.product_btn} btn text-white w-100 my-5`}
+            onClick={() => dispatch(addProductToCart(_id))}
+          >
+            + Add
+          </button>
         </div>
       </div>
     </div>

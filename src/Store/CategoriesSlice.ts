@@ -45,8 +45,6 @@ export const getCategoryById = createAsyncThunk(
       const { data } = await axios.get<CategoryDetails>(
         `https://ecommerce.routemisr.com/api/v1/categories/${_id}`
       );
-      console.log(data);
-
       return data;
     } catch (error) {
       return rejectWithValue(error);

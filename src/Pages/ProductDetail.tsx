@@ -9,8 +9,6 @@ const ProductDetail = () => {
   const params = useParams();
 
   const { product } = useAppSelector((state) => state.product);
-  console.log(product);
-
   useEffect(() => {
     dispatch(getProductById(params._id));
   }, [dispatch, params._id]);

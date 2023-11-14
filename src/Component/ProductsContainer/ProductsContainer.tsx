@@ -21,6 +21,7 @@ const ProductsContainer: React.FC<ProductProps> = ({ products }) => {
               category={product.category}
               ratingsAverage={product.ratingsAverage}
               _id={product._id}
+              productId={product._id}
             />
           </div>
         ))}

@@ -2,6 +2,8 @@ import React from "react";
 import style from "./SingleProduct.module.scss";
 import { Brand } from "../../Interfaces/productsInterface";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../../Store/hooks";
+import { addProductToCart } from "../../Store/CartSLice";
 
 interface ProductInterface {
   title: string;
@@ -10,7 +12,8 @@ interface ProductInterface {
   imageCover: string;
   category: Brand;
   ratingsAverage: number;
-  _id:string
+  _id: string;
+  productId?:string
 }
 
 const SingleProduct: React.FC<ProductInterface> = ({
@@ -20,9 +23,10 @@ const SingleProduct: React.FC<ProductInterface> = ({
   imageCover,
   ratingsAverage,
   category,
-  _id
-
+  _id,
+  productId
 }) => {
+  const dispatch = useAppDispatch();
   return (
     <div className={`${style.product_box}`}>
       <Link to={`product/${_id}`} style={{ textDecoration: "none" }}>
@@ -37,8 +41,10 @@ const SingleProduct: React.FC<ProductInterface> = ({
           {ratingsAverage}
         </span>
       </div>
-      <button className={`${style.product_btn} btn text-white w-100 my-2`}>
-        {" "}
+      <button
+        className={`${style.product_btn} btn text-white w-100 my-2`}
+        onClick={() => dispatch(addProductToCart(productId))}
+      >
         + Add
       </button>
     </div>

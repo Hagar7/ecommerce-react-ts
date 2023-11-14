@@ -6,6 +6,7 @@ import product from './ProductsSlice'
 import category from './CategoriesSlice'
 import subCategory from './SubCategorySlice'
 import brand from './BrandSlice'
+import cart from './CartSLice'
 
 
 const persistConfig = {
@@ -19,7 +20,8 @@ const persistConfig = {
   product,
   category,
   subCategory,
-  brand
+  brand,
+  cart
   })
 
   const persistedReducer = persistReducer(persistConfig, rootReducer)
