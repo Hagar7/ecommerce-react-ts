@@ -1,11 +1,11 @@
 import { registerUser } from "../Interfaces/authInterface";
 import style from "../styles/form.module.scss";
-import React, { ChangeEvent, useState } from "react";
+import {FC, ChangeEvent, useState,FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../Store/hooks";
 import { register } from "../Store/AuthSlice";
 import Joi from "joi";
 
-const Register: React.FC = () => {
+const Register:FC = () => {
   const { loading } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const [errormsg, setErrormsg] = useState<string[]>([]);
@@ -17,6 +17,13 @@ const Register: React.FC = () => {
     phone: "",
   });
 
+  type formDataKey = keyof typeof formData;
+
+  /**
+   * no input
+   * validates form data
+   * @returns object.error.details arr
+   */
   const formValidation = () => {
     let schema = Joi.object({
       name: Joi.string().min(2).max(10).required().messages({
@@ -49,23 +56,27 @@ const Register: React.FC = () => {
     return schema.validate(formData, { abortEarly: false });
   };
   const changeHnadler = (e: ChangeEvent<HTMLInputElement>) => {
-    let userData: any = { ...formData };
-    userData[e.target.name] = e.target.value;
-    setformData(userData);
+    setformData({...formData,[e.target.name as formDataKey]:e.target.value});
   };
 
-  const sumbitHnadler = (e: React.FormEvent) => {
+  /**
+   * handles form submittion 
+   * prents default 
+   * validates form data
+   * if error updates error state
+   * else dispatch register
+   */
+  const sumbitHnadler = (e: FormEvent) => {
     e.preventDefault();
     let validateResponse = formValidation();
     if (validateResponse.error) {
-      console.log(validateResponse);
-
       setErrormsg(validateResponse.error.details.map((item) => item.message));
     } else {
       dispatch(register(formData));
     }
   };
 
+  
   const showError = (msg: string) => {
     let newMsg = errormsg.filter((err) => err.includes(msg));
     if (newMsg[0] !== undefined) {
@@ -84,6 +95,7 @@ const Register: React.FC = () => {
           type="text"
           name="name"
           id="name"
+          value={formData.name}
           className="form-control my-2"
           onChange={changeHnadler}
         />
@@ -92,6 +104,7 @@ const Register: React.FC = () => {
         <input
           type="email"
           name="email"
+          value={formData.email}
           id="email"
           className="form-control my-2"
           onChange={changeHnadler}
@@ -101,6 +114,7 @@ const Register: React.FC = () => {
         <input
           type="password"
           name="password"
+          value={formData.password}
           id="password"
           className="form-control my-2"
           onChange={changeHnadler}
@@ -110,6 +124,7 @@ const Register: React.FC = () => {
         <input
           type="password"
           name="rePassword"
+          value={formData.rePassword}
           id="rePassword"
           className="form-control my-2"
           onChange={changeHnadler}
@@ -118,6 +133,7 @@ const Register: React.FC = () => {
         <label htmlFor="phone">Phone</label>
         <input
           type="tel"
+          value={formData.phone}
           name="phone"
           id="phone"
           className="form-control my-2"

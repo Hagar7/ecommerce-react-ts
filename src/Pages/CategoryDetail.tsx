@@ -14,7 +14,7 @@ const CategoryDetail = () => {
   return (
     <div className="container">
       <div className="row">
-        {filteredProducts.length > 0 ? (
+        {filteredProducts?.length > 0 ? (
           filteredProducts.map((product) => (
             <div className="col-md-2" key={product._id}>
               <SingleProduct

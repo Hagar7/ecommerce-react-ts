@@ -17,7 +17,7 @@ const Products = () => {
           <BrandList />
         </div>
         <div className="col-md-12">
-          {productsFiltered.length > 0 ? (
+          {productsFiltered?.length > 0 ? (
             <ProductsContainer products={productsFiltered} />
           ) : (
             <div className="main_bg alert alert-danger p-1">

@@ -1,14 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./Component/Layout/Layout";
+import Layout from "./Pages/Layout";
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
-import ProtectedRoute, {
-} from "./Component/ProtectedRoute/ProtectedRoute";
 import CategoryDetail from "./Pages/CategoryDetail";
 import ProductDetail from "./Pages/ProductDetail";
+import ProtectedRoute, {
+} from "./Component/ProtectedRoute/ProtectedRoute";
 
 
 function App() {
