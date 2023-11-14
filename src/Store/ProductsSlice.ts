@@ -67,6 +67,11 @@ const productSlice = createSlice({
         (item) => item.brand.name === action.payload
       );
     },
+    serachFiltered: (state, action) => {
+      state.productsFiltered = state.products.filter((item) =>
+        item.title.toLowerCase().startsWith(action.payload.toLowerCase())
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getProducts.pending, (state) => {
@@ -99,4 +104,5 @@ const productSlice = createSlice({
 });
 
 export default productSlice.reducer;
-export const { categoryFiltered, brandFiltered } = productSlice.actions;
+export const { categoryFiltered, brandFiltered, serachFiltered } =
+  productSlice.actions;
