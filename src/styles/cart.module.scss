@@ -1,0 +1,59 @@
+@import '../index.scss';
+
+
+.cart_container{
+    margin-top: 40px;
+h2{
+    text-align: center;
+    color: $mainColor ;
+    margin: 20px 0;
+
+}
+.btn_info{
+    background-color:$mainColor !important ;
+    color: $lightColor;
+    margin-right: 15px;
+    margin-bottom: 25px;
+}
+ .cart_box{
+    margin-bottom: 15px;
+    .cart_img{
+        img{
+            width: 100px;
+            margin-right: 20px;
+        }
+        button{
+            color: $mainColor ;
+        }
+    }
+    .cart_info{
+        display: flex;
+        flex-direction: column;
+        h4{
+            font-size: 16px;
+            color: $mainColor ;
+            text-align: center;
+        }
+        span{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .cart_quantity{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button{
+                border: 1px solid $mainColor;
+            }
+        }
+    }
+  
+ }
+ .cart_btns{
+display: flex;
+align-items: center;
+justify-content: flex-end;
+margin: 20px 0;
+
+}
+}

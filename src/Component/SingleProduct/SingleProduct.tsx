@@ -13,7 +13,7 @@ interface ProductInterface {
   category: Brand;
   ratingsAverage: number;
   _id: string;
-  productId?:string
+  productId?: string;
 }
 
 const SingleProduct: React.FC<ProductInterface> = ({
@@ -24,9 +24,10 @@ const SingleProduct: React.FC<ProductInterface> = ({
   ratingsAverage,
   category,
   _id,
-  productId
+  productId,
 }) => {
   const dispatch = useAppDispatch();
+
   return (
     <div className={`${style.product_box}`}>
       <Link to={`product/${_id}`} style={{ textDecoration: "none" }}>
@@ -43,7 +44,7 @@ const SingleProduct: React.FC<ProductInterface> = ({
       </div>
       <button
         className={`${style.product_btn} btn text-white w-100 my-2`}
-        onClick={() => dispatch(addProductToCart(productId))}
+        onClick={() => dispatch(addProductToCart(productId as string))}
       >
         + Add
       </button>

@@ -9,6 +9,7 @@ import CategoryDetail from "./Pages/CategoryDetail";
 import ProductDetail from "./Pages/ProductDetail";
 import ProtectedRoute, {
 } from "./Component/ProtectedRoute/ProtectedRoute";
+import Cart from "./Pages/Cart";
 
 
 function App() {
@@ -54,6 +55,14 @@ function App() {
           element: (
             <ProtectedRoute>
               <ProductDetail />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path:'cart',
+          element: (
+            <ProtectedRoute>
+              <Cart />
             </ProtectedRoute>
           ),
         },

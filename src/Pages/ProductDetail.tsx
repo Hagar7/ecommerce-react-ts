@@ -23,6 +23,7 @@ const ProductDetail = () => {
         title={product?.title}
         images={product?.images}
         _id={product?._id}
+        productId={product?.id}
       />
     </div>
   );

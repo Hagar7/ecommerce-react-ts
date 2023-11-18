@@ -51,10 +51,7 @@ export const register = createAsyncThunk(
         formData
       );
       return data;
-    } catch (error) {
-      console.log(error);
-      console.log(rejectWithValue(error));
-      
+    } catch (error) {      
       Toast.fire({
         icon: "error",
         title: "email is already registered",

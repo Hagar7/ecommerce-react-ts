@@ -1,7 +1,7 @@
 
 export interface CartInterface {
     status:         string;
-    message:        string;
+    message?:        string;
     numOfCartItems: number;
     data:           Data;
 }
@@ -22,3 +22,12 @@ export interface ProductCart {
     product: string;
     price:   number;
 }
+
+
+
+
+
+
+
+
+

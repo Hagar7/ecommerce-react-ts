@@ -18,6 +18,7 @@ interface ProductProps {
   ratingsAverage: number | undefined;
   _id: string | undefined;
   images: string[] | undefined;
+  productId?: string;
 }
 
 const OneProduct: React.FC<ProductProps> = ({
@@ -29,6 +30,7 @@ const OneProduct: React.FC<ProductProps> = ({
   ratingsAverage,
   images,
   _id,
+  productId
 }) => {
   const dispatch = useAppDispatch();
   return (
@@ -68,7 +70,7 @@ const OneProduct: React.FC<ProductProps> = ({
           </span>
           <button
             className={`${style.product_btn} btn text-white w-100 my-5`}
-            onClick={() => dispatch(addProductToCart(_id))}
+            onClick={() => dispatch(addProductToCart(productId as string))}
           >
             + Add
           </button>
